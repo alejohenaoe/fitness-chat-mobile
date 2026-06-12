@@ -1,0 +1,121 @@
+export interface ExtractedFood {
+  name: string;
+  quantity_grams?: number;
+  quantity_description?: string;
+  meal_type?: string;
+  calories_estimated: number;
+  protein_g: number;
+  carbs_g: number;
+  fat_g: number;
+  confidence?: string;
+}
+
+export interface ExtractedExercise {
+  name: string;
+  exercise_type?: string;
+  duration_minutes?: number;
+  intensity?: string;
+  calories_burned_estimated?: number;
+  calories_burned?: number;
+  notes?: string;
+}
+
+export interface ExtractedData {
+  extracted_foods?: ExtractedFood[];
+  extracted_exercises?: ExtractedExercise[];
+}
+
+export interface User {
+  id: number;
+  first_name: string;
+  email: string;
+  profile?: UserProfile;
+}
+
+export interface UserProfile {
+  age: number;
+  gender: string;
+  weight_kg: number;
+  height_cm: number;
+  goal: string;
+  activity_level: string;
+  daily_calorie_target: number;
+  protein_target_g: number;
+  carbs_target_g: number;
+  fat_target_g: number;
+}
+
+export interface MealLog {
+  id?: number;
+  name: string;
+  meal_type?: string;
+  calories: number;
+  protein_g?: number;
+  carbs_g?: number;
+  fat_g?: number;
+  quantity_description?: string;
+  occurred_at?: string;
+  created_at?: string;
+}
+
+export interface ExerciseLog {
+  id?: number;
+  name: string;
+  duration_minutes?: number;
+  calories_burned: number;
+  exercise_type?: string;
+  intensity?: string;
+  notes?: string;
+  occurred_at?: string;
+  created_at?: string;
+}
+
+export interface ChatMessage {
+  id?: number;
+  role: 'user' | 'assistant';
+  content: string;
+  message_type?: string;
+  created_at?: string;
+  extracted_data?: ExtractedData;
+}
+
+export interface DailyProgress {
+  caloriesConsumed: number;
+  caloriesBurned: number;
+  netCalories: number;
+  calorieTarget: number;
+  progressPct: number;
+  proteinG: number;
+  carbsG: number;
+  fatG: number;
+  mealsLogged: MealLog[];
+  exercisesLogged: ExerciseLog[];
+}
+
+export interface ChatSession {
+  id: number;
+  date: string;
+  created_at?: string;
+  messages?: ChatMessage[];
+}
+
+export interface DayHistory {
+  date: string;
+  calories_consumed: number;
+  calories_burned: number;
+  net_calories: number;
+  calorie_target: number;
+  progress_pct: number;
+  protein_g: number;
+  carbs_g: number;
+  fat_g: number;
+  meals_count: number;
+  exercises_count: number;
+}
+
+export interface PeriodSummary {
+  avg_calories: number;
+  registered_days: number;
+  total_days: number;
+  streak_days: number;
+}

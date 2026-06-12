@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "fitness-chat-mobile",
+    "name": "FitnessChat",
     "slug": "fitness-chat-mobile",
+    "scheme": "fitnesschat",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "ios": {
       "supportsTablet": true
     },
@@ -16,10 +17,22 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "package": "com.fitnesschat.mobile",
       "predictiveBackGestureEnabled": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "5bad153f-95bb-4a0e-b690-d4a8ff25a830"
+      }
+    },
+    "owner": "alejo-henao"
   }
 }
