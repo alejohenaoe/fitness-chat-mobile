@@ -29,7 +29,7 @@ This is an Expo 54 / React Native 0.71 / React 18 project. No linter, no formatt
 
 ## Key conventions
 
-- API env var: `EXPO_PUBLIC_API_BASE_URL` in `.env` (use device IP, not `localhost`, when testing on physical device). `.env` is committed; `.env*.local` is gitignored for overrides.
+- API env var: `EXPO_PUBLIC_API_BASE_URL` in `.env` (use device IP, not `localhost`, when testing on physical device). `.env` is gitignored — copy `.env.example` to `.env` and fill your values. `.env*.local` is also gitignored for local overrides.
 - Use `StyleSheet.create` for styling; no CSS-in-JS libraries
 - Zod schemas for form validation + API response parsing
 - No class components, no Redux, no prop-drilling (Zustand + hooks)
